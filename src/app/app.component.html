@@ -3,27 +3,27 @@
     <h6>Employee Register</h6>
   </div>
   <div class="card-body">
-    <form>
+    <form [formGroup]="employeeForm" (ngSubmit)="FormSubmit()">
       <div class="row">
         <div class="form-group col">
           <label>Department</label>
-          <select class="form-control">
+          <select class="form-control" name="department" formcontrolName="department" [class.is-invalid]="f['department'].invalid && f['department'].touched">
             <option value="">---select---</option>
-            <option value="">Accounts</option>
-            <option value="">Manager</option>
-            <option value="">Administrator</option>
+            <option value="Accounts">Accounts</option>
+            <option value="Manager">Manager</option>
+            <option value="Administrator">Administrator</option>
           </select>
         </div>
 
 
         <div class="form-group col">
           <label>Employee Name</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" name="empName" formcontrolName="empName">
         </div>
 
         <div class="form-group col">
           <label>Mobile no.</label>
-          <input type="number" class="form-control">
+          <input type="number" class="form-control" name="mobile" formcontrolName="mobile">
         </div>
 
 
@@ -32,22 +32,22 @@
       <div class="row mt-2">
         <div class="form-group col">
           <label>Gender</label>
-          <select class="form-control">
+          <select class="form-control" name="Gender" formcontrolName="Gender">
             <option value="">---select---</option>
-            <option value="">Male</option>
-            <option value="">Female</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
           </select>
         </div>
 
 
         <div class="form-group col">
           <label>Date of Join</label>
-          <input type="date" class="form-control">
+          <input type="date" class="form-control"  name="JoinDate" formcontrolName="JoinDate">
         </div>
 
         <div class="form-group col">
           <label>Email</label>
-          <input type="email" class="form-control">
+          <input type="email" class="form-control" name="Email" formcontrolName="Email">
         </div>
 
 
@@ -56,18 +56,18 @@
       <div class="row mt-2">
         <div class="form-group col">
           <label>Salary</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control"  name="Salary" formcontrolName="Salary">
         </div>
 
 
         <div class="form-group col">
           <label>Password</label>
-          <input type="password" class="form-control">
+          <input type="password" class="form-control" name="Password" formcontrolName="Password">
         </div>
 
         <div class="form-group col">
           <label>Confirm Password</label>
-          <input type="password" class="form-control">
+          <input type="password" class="form-control"  name="ConfirmPass" formcontrolName="ConfirmPass">
         </div>
 
 
@@ -76,7 +76,7 @@
       <div class="row mt-2">
         <div class="col-12">
           <div class="form-group col form-check">
-            <input type="checkbox" class="form-check-input">
+            <input type="checkbox" class="form-check-input" name="EmpStatus" formcontrolName="EmpStatus">
             <label>Active</label>
           </div>
         </div>
@@ -84,9 +84,9 @@
 
       <div class="row mt-2">
         <div class="form-group text-center">
-          <button class="btn btn-success me-2">save</button>
-          <button class="btn btn-warning me-2">Reset</button>
-          <button class="btn btn-danger">Cancel</button>
+          <button type="submit" class="btn btn-success me-2">save</button>
+          <button type="button" class="btn btn-warning me-2">Reset</button>
+          <button type="button" class="btn btn-danger">Cancel</button>
         </div>
       </div>
 
