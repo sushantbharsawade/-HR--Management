@@ -7,24 +7,45 @@
       <div class="row">
         <div class="form-group col">
           <label>Department</label>
-          <select class="form-control" name="department" formcontrolName="department" [class.is-invalid]="f['department'].invalid && f['department'].touched">
+          <select class="form-control" name="department" formcontrolName="department"  [class.is-invalid]="f['department'].invalid && f['department'].touched">
             <option value="">---select---</option>
             <option value="Accounts">Accounts</option>
             <option value="Manager">Manager</option>
             <option value="Administrator">Administrator</option>
           </select>
+          <div class="alert alert-danger" *ngIf="f['department'].invalid && f['department'].touched">
+            <div *ngIf="f['department'].errors && f['department'].errors['required']">
+             Department is Required
+            </div>
+          </div>
         </div>
+
+      
 
 
         <div class="form-group col">
           <label>Employee Name</label>
-          <input type="text" class="form-control" name="empName" formcontrolName="empName">
+          <input type="text" class="form-control" name="empName" formcontrolName="empName" [class.is-invalid]="f['empName'].invalid && f['empName'].touched">
+       
+
+        <div class="alert alert-danger" *ngIf="f['empName'].invalid && f['empName'].touched">
+          <div *ngIf="f['empName'].errors && f['empName'].errors['required']">
+            Name is Required
+          </div>
         </div>
+      </div>
 
         <div class="form-group col">
           <label>Mobile no.</label>
-          <input type="number" class="form-control" name="mobile" formcontrolName="mobile">
+          <input type="number" class="form-control" name="mobile" formcontrolName="mobile" [class.is-invalid]="f['mobile'].invalid && f['mobile'].touched">
+     
+
+        <div class="alert alert-danger" *ngIf="f['mobile'].invalid && f['mobile'].touched">
+          <div *ngIf="f['mobile'].errors && f['mobile'].errors['required']">
+            Mobile no. is Required
+          </div>
         </div>
+      </div>
 
 
       </div>
@@ -32,23 +53,41 @@
       <div class="row mt-2">
         <div class="form-group col">
           <label>Gender</label>
-          <select class="form-control" name="Gender" formcontrolName="Gender">
+          <select class="form-control" name="Gender" formcontrolName="Gender" [class.is-invalid]="f['Gender'].invalid && f['Gender'].touched">
             <option value="">---select---</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
+       
+        <div class="alert alert-danger" *ngIf="f['Gender'].invalid && f['Gender'].touched">
+          <div *ngIf="f['Gender'].errors && f['Gender'].errors['required']">
+            Gender is Required
+          </div>
         </div>
+      </div>
 
 
         <div class="form-group col">
           <label>Date of Join</label>
-          <input type="date" class="form-control"  name="JoinDate" formcontrolName="JoinDate">
+          <input type="date" class="form-control"  name="JoinDate" formcontrolName="JoinDate" [class.is-invalid]="f['JoinDate'].invalid && f['JoinDate'].touched">
+          
+          <div class="alert alert-danger" *ngIf="f['JoinDate'].invalid && f['JoinDate'].touched">
+            <div *ngIf="f['JoinDate'].errors && f['JoinDate'].errors['required']">
+              Date of Join is Required
+            </div>
+          </div>
         </div>
 
         <div class="form-group col">
           <label>Email</label>
-          <input type="email" class="form-control" name="Email" formcontrolName="Email">
+          <input type="email" class="form-control" name="Email" formcontrolName="Email" [class.is-invalid]="f['Email'].invalid && f['Email'].touched">
+       
+        <div class="alert alert-danger" *ngIf="f['Email'].invalid && f['Email'].touched">
+          <div *ngIf="f['Email'].errors && f['Email'].errors['required']">
+            Email is Required
+          </div>
         </div>
+      </div>
 
 
       </div>
@@ -56,37 +95,60 @@
       <div class="row mt-2">
         <div class="form-group col">
           <label>Salary</label>
-          <input type="text" class="form-control"  name="Salary" formcontrolName="Salary">
+          <input type="text" class="form-control"  name="Salary" formcontrolName="Salary" [class.is-invalid]="f['Salary'].invalid && f['Salary'].touched">
+       
+        <div class="alert alert-danger" *ngIf="f['Salary'].invalid && f['Salary'].touched">
+          <div *ngIf="f['Salary'].errors && f['Salary'].errors['required']">
+            Salary is Required
+          </div>
         </div>
-
+      </div>
 
         <div class="form-group col">
           <label>Password</label>
-          <input type="password" class="form-control" name="Password" formcontrolName="Password">
+          <input type="password" class="form-control" name="Password" formcontrolName="Password" [class.is-invalid]="f['Password'].invalid && f['Password'].touched">
+    
+
+        <div class="alert alert-danger" *ngIf="f['Password'].invalid && f['Password'].touched">
+          <div *ngIf="f['Password'].errors && f['Password'].errors['required']">
+            Password is Required
+          </div>
         </div>
+      </div>
 
         <div class="form-group col">
           <label>Confirm Password</label>
-          <input type="password" class="form-control"  name="ConfirmPass" formcontrolName="ConfirmPass">
+          <input type="password" class="form-control"  name="ConfirmPass" formcontrolName="ConfirmPass" [class.is-invalid]="f['ConfirmPass'].invalid && f['ConfirmPass'].touched">
+      
+        <div class="alert alert-danger" *ngIf="f['ConfirmPass'].invalid && f['ConfirmPass'].touched">
+          <div *ngIf="f['ConfirmPass'].errors && f['ConfirmPass'].errors['required']">
+            Confirm Password is Required
+          </div>
         </div>
-
+      </div>
 
       </div>
 
       <div class="row mt-2">
         <div class="col-12">
           <div class="form-group col form-check">
-            <input type="checkbox" class="form-check-input" name="EmpStatus" formcontrolName="EmpStatus">
+            <input type="checkbox" class="form-check-input" name="EmpStatus" formcontrolName="EmpStatus" [class.is-invalid]="f['EmpStatus'].invalid && f['EmpStatus'].touched">
             <label>Active</label>
+         
+          <div class="alert alert-danger" *ngIf="f['EmpStatus'].invalid && f['EmpStatus'].touched">
+            <div *ngIf="f['EmpStatus'].errors && f['EmpStatus'].errors['required']">
+              Status is Required
+            </div>
           </div>
+        </div>
         </div>
       </div>
 
       <div class="row mt-2">
         <div class="form-group text-center">
-          <button type="submit" class="btn btn-success me-2">save</button>
-          <button type="button" class="btn btn-warning me-2">Reset</button>
-          <button type="button" class="btn btn-danger">Cancel</button>
+          <button type="submit" [class.disabled]="employeeForm.invalid" class="btn btn-success me-2">save</button>
+          <button type="button" class="btn btn-warning me-2" (click)="resetbtn()">Reset</button>
+          <button type="button" class="btn btn-danger" (click)="cancelbtn()">Cancel</button>
         </div>
       </div>
 

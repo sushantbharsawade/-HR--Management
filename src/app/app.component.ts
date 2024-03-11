@@ -42,6 +42,14 @@ export class AppComponent {
     return this.employeeForm.controls;
   }
 
+  resetbtn(){
+   this.employeeForm.reset();
+  }
+
+  cancelbtn(){
+    this.employeeForm.reset();
+  }
+
  
 
 }
