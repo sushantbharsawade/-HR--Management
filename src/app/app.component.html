@@ -176,13 +176,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Account</td>
-            <td>Sushant</td>
-            <td>1800180018</td>
-            <td>Male</td>
-            <td>01-04-2024</td>
-            <td>sushant@gmail.com</td>
+          <tr *ngFor="let emp of employees">
+            <td>{{emp.department}}</td>
+            <td>{{emp.empName}}</td>
+            <td>{{emp.mobile}}</td>
+            <td>{{emp.gender}}</td>
+            <td>{{emp.JoinDtae}}</td>
+            <td>{{emp.email}}</td>
             <td class="text-center">
               <i class="fa fa-edit text-primary me-2"></i> 
               <i class="fa fa-info text-info me-2"></i> 
