@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './database/data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     ReactiveFormsModule,
   HttpClientInMemoryWebApiModule.forRoot(DataService),
-  HttpClientModule
+  HttpClientModule,
+  ToastrModule.forRoot(),
+  BrowserModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
